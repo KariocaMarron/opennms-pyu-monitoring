@@ -1,25 +1,21 @@
+# Pyongyang Campus Simulated Devices - SNMP Enabled
+
 services:
-  # Pyongyang Simulated Devices
   py-router:
-    image: alpine:latest
+    image: tandrup/snmpsim
     container_name: pyu-py-router
     hostname: pyu-py-router
+    command: /bin/sh -c "snmpsimd.py --agent-udpv4-endpoint=0.0.0.0:161 --process-user=snmpsim --process-group=nogroup"
+    restart: unless-stopped
     networks:
       - kafka_pyu-main
-    command: sh -c "while true; do sleep 3600; done"
 
   py-switch:
-    image: alpine:latest
+    image: tandrup/snmpsim
     container_name: pyu-py-switch
     hostname: pyu-py-switch
-    networks:
-      - kafka_pyu-main
-    command: sh -c "while true; do sleep 3600; done"
-
-  py-server:
-    image: nginx:alpine
-    container_name: pyu-py-server
-    hostname: pyu-py-server
+    command: /bin/sh -c "snmpsimd.py --agent-udpv4-endpoint=0.0.0.0:161 --process-user=snmpsim --process-group=nogroup"
+    restart: unless-stopped
     networks:
       - kafka_pyu-main
 
@@ -27,6 +23,6 @@ networks:
   kafka_pyu-main:
     external: true
 
-#Jose Vasconcelos - Dec 2025
-#GitHub - KariocaMarron
-#acme5bataj10@outlook.com
+# Jose Vasconcelos - Jan 2026
+# GitHub - KariocaMarron
+# COM615 Network Management - Pyongyang University OpenNMS Lab

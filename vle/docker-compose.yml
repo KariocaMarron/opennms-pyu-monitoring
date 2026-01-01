@@ -1,12 +1,15 @@
+# VLE (Virtual Learning Environment) - NGINX Simulation
+# Lightweight VLE for monitoring demonstration
+
 services:
   vle:
     image: nginx:alpine
     container_name: pyu-vle
     hostname: pyu-vle
+    ports:
+      - "8081:80"
     volumes:
       - ./vle-content:/usr/share/nginx/html:ro
-    ports:
-      - "8081:80/tcp"
     restart: unless-stopped
     networks:
       - kafka_pyu-main
@@ -15,6 +18,6 @@ networks:
   kafka_pyu-main:
     external: true
 
-#Jose Vasconcelos - Dec 2025
-#GitHub - KariocaMarron
-#acme5bataj10@outlook.com
+# Jose Vasconcelos - Jan 2026
+# GitHub - KariocaMarron
+# COM615 Network Management - Pyongyang University OpenNMS Lab
