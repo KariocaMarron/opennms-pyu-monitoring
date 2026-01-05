@@ -16,9 +16,9 @@ services:
       timeout: 3s
       retries: 3
     networks:
-      - kafka_pyu-main
-
-
+      kafka_pyu-main:
+        ipv4_address: 172.18.0.10
+        
   activemq:
     image: apache/activemq-classic:5.18.3
     container_name: pyu-activemq
@@ -29,8 +29,9 @@ services:
       - "61616:61616/tcp"
       - "8161:8161/tcp"
     networks:
-      - kafka_pyu-main
-
+      kafka_pyu-main:
+        ipv4_address: 172.18.0.9
+        
   horizon:
     image: opennms/horizon:33.0.2
     container_name: pyu-horizon
@@ -55,7 +56,8 @@ services:
       timeout: 5s
       retries: 3
     networks:
-      - kafka_pyu-main
+      kafka_pyu-main:
+        ipv4_address: 172.18.0.11
 
 volumes:
   postgres-data:
@@ -65,8 +67,6 @@ networks:
   kafka_pyu-main:
     external: true
 
-#Jose Vasconcelos - Dec 2025
-
-#Jose Vasconcelos - Dec 2025
-#GitHub - KariocaMarron
-#acme5bataj10@outlook.com
+# Jose Vasconcelos - Jan 2026
+# GitHub - KariocaMarron
+# Static IPs configured for stability

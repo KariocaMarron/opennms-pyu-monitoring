@@ -11,7 +11,8 @@ services:
     volumes:
       - semaphore-mysql:/var/lib/mysql
     networks:
-      - kafka_pyu-main
+      kafka_pyu-main:
+        ipv4_address: 172.18.0.7
     restart: unless-stopped
 
   semaphore:
@@ -51,6 +52,6 @@ networks:
   kafka_pyu-main:
     external: true
 
-#Jose Vasconcelos - Dec 2025
-#GitHub - KariocaMarron
-#acme5bataj10@outlook.com
+# Jose Vasconcelos - Jan 2026
+# GitHub - KariocaMarron
+# Static IPs configured for stability

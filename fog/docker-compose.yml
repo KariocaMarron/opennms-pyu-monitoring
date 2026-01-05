@@ -11,7 +11,8 @@ services:
     volumes:
       - fog-mysql:/var/lib/mysql
     networks:
-      - kafka_pyu-main
+      kafka_pyu-main:
+        ipv4_address: 172.18.0.8
     restart: unless-stopped
 
   fog-web:
