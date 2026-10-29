@@ -12,10 +12,9 @@ This repository contains a complete distributed network monitoring solution usin
 | Component | Details |
 |-----------|---------|
 | **OpenNMS Version** | Horizon 33.0.2 |
-| **Monitored Nodes** | 45 |
+| **Monitored services** | 39 (dashboard, 29 December 2025) |
 | **Campuses** | Pyongyang (CIOC), Hamhung, Chongjin |
 | **Minions** | 2 (distributed collectors) |
-| **Overall Availability** | 99.76%+ |
 
 ## Architecture
 ```
@@ -88,13 +87,13 @@ pyu-opennms_lab/
 └── stop-opennms-lab.sh   # Shutdown script
 ```
 
-## SLA Compliance
+## Results
 
-| Metric | Target | Achieved |
-|--------|--------|----------|
-| MTTD (Mean Time to Detect) | < 10 min | ✅ 1-5 min |
-| MTTR (Mean Time to Repair) | < 45 min | ✅ Supported |
-| Availability | ≥ 97% | ✅ 99.76% |
+The OpenNMS dashboard captured on 29 December 2025 (16:43 UTC) shows **100% service availability over the preceding 24 hours** across 39 monitored services, with no outages. These figures come from the simulated lab, not production traffic.
+
+![OpenNMS dashboard, 29 December 2025](screenshots/01_opennms_dashboard_main.png)
+
+Service targets were detection within 10 minutes, repair within 45 minutes and availability of at least 97%. Detection and repair times were not measured in this lab.
 
 ## Team
 
