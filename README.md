@@ -99,7 +99,7 @@ Service targets were detection within 10 minutes, repair within 45 minutes and a
 
 | Member | Role |
 |--------|------|
-| Jose Vasconcelos | OpenNMS Monitoring & Alerting |
+| Jose Vasconcelos | Responsible for OpenNMS monitoring and alerting |
 | Bigyan | Ansible Automation |
 | Biloliddin | VMware/Kubernetes Virtualisation |
 | Sebastian | Network Security |

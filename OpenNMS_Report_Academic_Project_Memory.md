@@ -17,7 +17,7 @@
 This project implements a distributed network monitoring solution using **OpenNMS Horizon** for Pyongyang University (PYU), a fictional three-campus educational institution. The implementation is part of the COM615 Network Management module, demonstrating enterprise-grade network monitoring capabilities in a containerised lab environment.
 
 **Project Name:** PyongNet Communications - OpenNMS Implementation  
-**Role:** Monitoring Lead (Jose Vasconcelos)
+**Role:** Jose Vasconcelos, responsible for OpenNMS monitoring and alerting
 
 ### 1.2 Why It Exists
 
@@ -269,7 +269,7 @@ Minions are distributed polling agents deployed at remote campuses:
 
 | Name | Role | Integration Points |
 |------|------|-------------------|
-| Jose (Karioka) | OpenNMS Monitoring Lead | Core monitoring |
+| Jose (Karioka) | Responsible for OpenNMS monitoring and alerting | Core monitoring |
 | Bigyan | Ansible Automation Lead | Inventory sync |
 | Biloliddin | VMware/Kubernetes Lead | Hypervisor monitoring |
 | Sebastian | Network Security Lead | SNMPv3, syslog |
