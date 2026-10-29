@@ -867,7 +867,6 @@ opennms-pyu-lab/
 **Student Information:**
 - **Name:** Jose Vasconcelos  
 - **GitHub:** KariocaMarron  
-- **Email:** acme5bataj10@outlook.com  
 - **Institution:** Southampton Solent University  
 
 **Repository:**

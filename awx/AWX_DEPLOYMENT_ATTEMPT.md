@@ -570,7 +570,6 @@ redis:7-alpine                      # 30 MB
 
 **Document Author:** Jose Vasconcelos  
 **GitHub:** KariocaMarron  
-**Email:** acme5bataj10@outlook.com  
 **Institution:** Southampton Solent University  
 **Module:** COM615 - Network Management  
 **Date:** 29 December 2025

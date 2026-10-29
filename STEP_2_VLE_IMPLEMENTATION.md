@@ -206,7 +206,6 @@ networks:
 
 #Jose Vasconcelos - Dec 2025
 #GitHub - KariocaMarron
-#acme5bataj10@outlook.com
 ```
 
 ---
