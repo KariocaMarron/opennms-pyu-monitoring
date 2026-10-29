@@ -15,3 +15,8 @@ audit_output_*/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Local secrets: never commit
+.env
+horizon/overlay/etc/opennms.properties.d/activemq.properties
+ldap/university-structure.ldif

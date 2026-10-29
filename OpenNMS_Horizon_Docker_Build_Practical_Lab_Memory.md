@@ -421,29 +421,29 @@ sleep 10
 ## H.1 OpenNMS
 - URL: http://localhost:8980/opennms
 - Username: admin
-- Password: admin
+- Password: set in `.env`
 
 ## H.2 LDAP
 - URL: http://localhost:8082
 - Login DN: cn=admin,dc=pyu,dc=edu,dc=kp
-- Password: admin
+- Password: set in `.env`
 
 ## H.3 ActiveMQ
 - URL: http://localhost:8161
 - Username: admin
-- Password: admin
+- Password: set in `.env`
 
 ## H.4 Semaphore
 - URL: http://localhost:8084
 - Username: admin
-- Password: admin
+- Password: set in `.env`
 
 ## H.5 PostgreSQL
 - Host: pyu-postgres
 - Port: 5432
 - Database: opennms
 - Username: opennms
-- Password: opennms
+- Password: set in `.env`
 
 ---
 

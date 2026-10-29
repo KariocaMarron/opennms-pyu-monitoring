@@ -15,11 +15,11 @@ services:
       MOODLE_DATABASE_PORT_NUMBER: 5432
       MOODLE_DATABASE_NAME: moodle
       MOODLE_DATABASE_USER: moodle
-      MOODLE_DATABASE_PASSWORD: moodle
+      MOODLE_DATABASE_PASSWORD: ${MOODLE_DB_PASSWORD}
       
       # Moodle admin credentials
       MOODLE_USERNAME: admin
-      MOODLE_PASSWORD: Admin123!
+      MOODLE_PASSWORD: ${VLE_ADMIN_PASSWORD}
       MOODLE_EMAIL: admin@pyu.edu.kp
       MOODLE_SITE_NAME: "Pyongyang University VLE"
       

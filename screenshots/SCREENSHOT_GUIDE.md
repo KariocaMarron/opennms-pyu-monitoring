@@ -118,11 +118,11 @@ docker stats --no-stream
 
 | Service | URL | Credentials |
 |---------|-----|-------------|
-| OpenNMS | http://localhost:8980/opennms | admin/admin |
+| OpenNMS | http://localhost:8980/opennms | set in `.env` |
 | VLE | http://localhost:8081 | N/A |
-| LDAP Admin | http://localhost:8082 | cn=admin,dc=pyu,dc=edu,dc=kp / admin |
+| LDAP Admin | http://localhost:8082 | cn=admin,dc=pyu,dc=edu,dc=kp / password in `.env` |
 | DNS/DHCP | http://localhost:8083 | N/A |
-| Semaphore | http://localhost:8084 | admin/admin |
+| Semaphore | http://localhost:8084 | set in `.env` |
 | FOG Server | http://localhost:8085 | N/A |
 | Hamhung Web | http://172.18.0.32 | N/A |
 | Chongjin Web | http://172.18.0.42 | N/A |

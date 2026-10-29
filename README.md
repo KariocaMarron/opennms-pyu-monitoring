@@ -37,6 +37,13 @@ This repository contains a complete distributed network monitoring solution usin
 
 ## Quick Start
 
+### First-time setup
+All credentials are local lab defaults supplied via `.env`, which is never committed. Change them before any non-lab use.
+```bash
+cp .env.example .env     # then set your own values
+./render-config.sh       # builds the OpenNMS and LDAP config files from their templates
+```
+
 ### Start Lab
 ```bash
 ~/pyu-opennms_lab/start-opennms-lab.sh
@@ -51,12 +58,12 @@ This repository contains a complete distributed network monitoring solution usin
 
 | Service | URL | Credentials |
 |---------|-----|-------------|
-| OpenNMS | http://localhost:8980/opennms | admin / admin |
+| OpenNMS | http://localhost:8980/opennms | set in `.env` |
 | VLE | http://localhost:8081 | - |
 | DNS/DHCP | http://localhost:8083 | - |
-| Semaphore | http://localhost:8084 | admin / admin |
+| Semaphore | http://localhost:8084 | set in `.env` |
 | LDAP Admin | http://localhost:8085 | - |
-| ActiveMQ | http://localhost:8161 | admin / admin |
+| ActiveMQ | http://localhost:8161 | set in `.env` |
 
 ## Directory Structure
 ```

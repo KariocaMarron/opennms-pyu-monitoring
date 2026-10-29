@@ -4,10 +4,10 @@ services:
     container_name: pyu-fog-db
     hostname: fog-db
     environment:
-      MYSQL_ROOT_PASSWORD: fogpassword
+      MYSQL_ROOT_PASSWORD: ${FOG_DB_ROOT_PASSWORD}
       MYSQL_DATABASE: fog
       MYSQL_USER: fog
-      MYSQL_PASSWORD: fogpass
+      MYSQL_PASSWORD: ${FOG_DB_PASSWORD}
     volumes:
       - fog-mysql:/var/lib/mysql
     networks:
@@ -27,7 +27,7 @@ services:
       MYSQL_HOST: fog-db
       MYSQL_DATABASE: fog
       MYSQL_USER: fog
-      MYSQL_PASSWORD: fogpass
+      MYSQL_PASSWORD: ${FOG_DB_PASSWORD}
     volumes:
       - ./fog-web:/var/www/html
       - fog-images:/var/www/html/images

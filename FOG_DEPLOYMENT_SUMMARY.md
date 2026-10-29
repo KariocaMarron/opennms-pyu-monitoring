@@ -40,7 +40,7 @@ fog-web:
 fog-mysql:
   image: mysql:5.7
   database: fog
-  credentials: fog/fogpass
+  credentials: fog / password in `.env` (FOG_DB_PASSWORD)
 ```
 
 ### Features Demonstrated

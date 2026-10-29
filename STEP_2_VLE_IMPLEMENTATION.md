@@ -77,7 +77,7 @@ Pyongyang (Central Campus)
 
 2. **Create VLE database in PostgreSQL**
    - Database: `moodle`
-   - User: `moodle` / Password: `moodle`
+   - User: `moodle` / Password: set in `.env` (MOODLE_DB_PASSWORD)
 
 3. **Configure OpenNMS Monitoring**
    - Add VLE node to requisitions
@@ -100,7 +100,7 @@ services:
       POSTGRES_HOST: database
       POSTGRES_PORT: 5432
       POSTGRES_USER: opennms
-      POSTGRES_PASSWORD: opennms
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: opennms
     volumes:
       - postgres-data:/var/lib/postgresql/data
@@ -118,7 +118,7 @@ services:
     container_name: pyu-activemq
     environment:
       ACTIVEMQ_ADMIN_LOGIN: admin
-      ACTIVEMQ_ADMIN_PASSWORD: admin
+      ACTIVEMQ_ADMIN_PASSWORD: ${ACTIVEMQ_ADMIN_PASSWORD}
     ports:
       - "61616:61616/tcp"
       - "8161:8161/tcp"
@@ -132,7 +132,7 @@ services:
       POSTGRES_HOST: database
       POSTGRES_PORT: 5432
       POSTGRES_USER: opennms
-      POSTGRES_PASSWORD: opennms
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - horizon-data:/opennms-data
       - ./overlay:/opt/opennms-overlay
@@ -163,11 +163,11 @@ services:
       MOODLE_DATABASE_PORT_NUMBER: 5432
       MOODLE_DATABASE_NAME: moodle
       MOODLE_DATABASE_USER: moodle
-      MOODLE_DATABASE_PASSWORD: moodle
+      MOODLE_DATABASE_PASSWORD: ${MOODLE_DB_PASSWORD}
       
       # Moodle admin credentials
       MOODLE_USERNAME: admin
-      MOODLE_PASSWORD: Admin123!
+      MOODLE_PASSWORD: ${VLE_ADMIN_PASSWORD}
       MOODLE_EMAIL: admin@pyu.edu.kp
       MOODLE_SITE_NAME: "Pyongyang University VLE"
       
@@ -228,7 +228,7 @@ DO
 $$
 BEGIN
    IF NOT EXISTS (SELECT FROM pg_catalog.pg_user WHERE usename = 'moodle') THEN
-      CREATE USER moodle WITH PASSWORD 'moodle';
+      CREATE USER moodle WITH PASSWORD '<MOODLE_DB_PASSWORD>';
    END IF;
 END
 $$;
@@ -264,7 +264,7 @@ DO
 $$
 BEGIN
    IF NOT EXISTS (SELECT FROM pg_catalog.pg_user WHERE usename = 'moodle') THEN
-      CREATE USER moodle WITH PASSWORD 'moodle';
+      CREATE USER moodle WITH PASSWORD '<MOODLE_DB_PASSWORD>';
    END IF;
 END
 $$;
@@ -319,7 +319,7 @@ docker inspect pyu-vle | grep -A 5 Health
 
 **URL:** http://localhost:8081  
 **Username:** admin  
-**Password:** Admin123!
+**Password:** set in `.env` (VLE_ADMIN_PASSWORD)
 
 ---
 
@@ -444,7 +444,7 @@ docker exec pyu-postgres psql -U postgres -c "\l" | grep moodle
 
 # If missing, create manually
 docker exec pyu-postgres psql -U postgres -c "CREATE DATABASE moodle;"
-docker exec pyu-postgres psql -U postgres -c "CREATE USER moodle WITH PASSWORD 'moodle';"
+docker exec pyu-postgres psql -U postgres -c "CREATE USER moodle WITH PASSWORD '<MOODLE_DB_PASSWORD>';"
 docker exec pyu-postgres psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE moodle TO moodle;"
 
 # Restart VLE

@@ -104,7 +104,7 @@ Minions (hamhung-minion, chongjin-minion)
 ### 1. Horizon Stack (`horizon/docker-compose.yml`)
 
 **Components:**
-- PostgreSQL 14 (opennms/opennms)
+- PostgreSQL 14 (user: opennms, password in `.env`)
 - ActiveMQ Classic 5.18.3
 - OpenNMS Horizon 33.0.2
 

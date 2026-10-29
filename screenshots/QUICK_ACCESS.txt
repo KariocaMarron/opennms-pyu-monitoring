@@ -2,13 +2,13 @@ QUICK ACCESS - PYONGYANG UNIVERSITY INFRASTRUCTURE
 ==================================================
 
 MAIN MONITORING:
-OpenNMS: http://localhost:8980/opennms (admin/admin)
+OpenNMS: http://localhost:8980/opennms (user: admin, password in .env)
 
 CORE SERVICES:
 VLE:       http://localhost:8081
 LDAP:      http://localhost:8082 (cn=admin,dc=pyu,dc=edu,dc=kp/admin)
 DNS/DHCP:  http://localhost:8083
-Semaphore: http://localhost:8084 (admin/admin)
+Semaphore: http://localhost:8084 (user: admin, password in .env)
 FOG:       http://localhost:8085
 
 REMOTE CAMPUSES:

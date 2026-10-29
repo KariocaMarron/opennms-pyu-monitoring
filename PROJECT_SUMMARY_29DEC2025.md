@@ -135,7 +135,7 @@ dhcp-option=option:dns-server,172.18.0.12
 **Implementation:**
 - Modern Ansible web interface
 - MySQL 8.0 backend database
-- Admin credentials: admin/admin
+- Admin credentials: admin / password in `.env`
 - Access key encryption configured
 - Ready for playbook deployment
 
@@ -315,12 +315,12 @@ if not detect_kubernetes_environment():
 
 | Service | URL | Credentials |
 |---------|-----|-------------|
-| OpenNMS | http://localhost:8980/opennms | admin/admin |
+| OpenNMS | http://localhost:8980/opennms | set in `.env` |
 | VLE | http://localhost:8081 | N/A |
-| phpLDAPadmin | http://localhost:8082 | admin/admin |
+| phpLDAPadmin | http://localhost:8082 | set in `.env` |
 | DNS/DHCP UI | http://localhost:8083 | N/A |
-| Semaphore | http://localhost:8084 | admin/admin |
-| ActiveMQ | http://localhost:8161 | admin/admin |
+| Semaphore | http://localhost:8084 | set in `.env` |
+| ActiveMQ | http://localhost:8161 | set in `.env` |
 
 ### Monitoring Coverage
 

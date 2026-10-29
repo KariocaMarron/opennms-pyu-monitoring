@@ -7,7 +7,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
       MYSQL_DATABASE: semaphore
       MYSQL_USER: semaphore
-      MYSQL_PASSWORD: semaphorepass
+      MYSQL_PASSWORD: ${SEMAPHORE_DB_PASSWORD}
     volumes:
       - semaphore-mysql:/var/lib/mysql
     networks:
@@ -28,9 +28,9 @@ services:
       SEMAPHORE_DB_HOST: semaphore-db
       SEMAPHORE_DB_PORT: 3306
       SEMAPHORE_DB_USER: semaphore
-      SEMAPHORE_DB_PASS: semaphorepass
+      SEMAPHORE_DB_PASS: ${SEMAPHORE_DB_PASSWORD}
       SEMAPHORE_DB_NAME: semaphore
-      SEMAPHORE_ADMIN_PASSWORD: admin
+      SEMAPHORE_ADMIN_PASSWORD: ${SEMAPHORE_ADMIN_PASSWORD}
       SEMAPHORE_ADMIN_NAME: admin
       SEMAPHORE_ADMIN_EMAIL: admin@pyu.edu.kp
       SEMAPHORE_ADMIN: admin

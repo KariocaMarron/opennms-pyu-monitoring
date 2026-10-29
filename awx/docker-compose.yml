@@ -5,7 +5,7 @@ services:
     hostname: awx-postgres
     environment:
       POSTGRES_USER: awx
-      POSTGRES_PASSWORD: awxpass
+      POSTGRES_PASSWORD: ${AWX_DB_PASSWORD}
       POSTGRES_DB: awx
     volumes:
       - awx-postgres-data:/var/lib/postgresql/data
@@ -31,9 +31,9 @@ services:
     ports:
       - "8084:8052"
     environment:
-      SECRET_KEY: "awxsecret123456789012345678901234"
+      SECRET_KEY: "${AWX_SECRET_KEY}"
       DATABASE_USER: awx
-      DATABASE_PASSWORD: awxpass
+      DATABASE_PASSWORD: ${AWX_DB_PASSWORD}
       DATABASE_NAME: awx
       DATABASE_PORT: 5432
       DATABASE_HOST: awx-postgres
@@ -61,9 +61,9 @@ services:
       - awx-redis
       - awx-web
     environment:
-      SECRET_KEY: "awxsecret123456789012345678901234"
+      SECRET_KEY: "${AWX_SECRET_KEY}"
       DATABASE_USER: awx
-      DATABASE_PASSWORD: awxpass
+      DATABASE_PASSWORD: ${AWX_DB_PASSWORD}
       DATABASE_NAME: awx
       DATABASE_PORT: 5432
       DATABASE_HOST: awx-postgres

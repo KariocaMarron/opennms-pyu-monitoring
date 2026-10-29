@@ -11,7 +11,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('DATABASE_NAME', 'awx'),
         'USER': os.getenv('DATABASE_USER', 'awx'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD', 'awxpass'),
+        'PASSWORD': os.environ['DATABASE_PASSWORD'],
         'HOST': os.getenv('DATABASE_HOST', 'awx-postgres'),
         'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
@@ -24,7 +24,7 @@ BROKER_URL = 'redis://{}:{}'.format(
 )
 
 # Secret Key
-SECRET_KEY = os.getenv('SECRET_KEY', 'awxsecret123456789012345678901234')
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # Allowed Hosts
 ALLOWED_HOSTS = ['*']
