@@ -1,5 +1,8 @@
 # OpenNMS PYU Monitoring Lab
 
+> **Fictional case study.** "Pyongyang University (PYU)" is a fictional three-campus university used as the case study for the COM615 Network Management module at Southampton Solent University. No real organisation, network or data is involved: every system runs as a container in a local lab.
+
+
 **COM615 Network Management - Pyongyang University Infrastructure Monitoring**
 
 ## Overview
